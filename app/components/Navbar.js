@@ -1,3 +1,5 @@
+"use client"; 
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -18,9 +20,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 ${
-      scrolled ? "bg-black bg-opacity-80 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
-    }`}>
+<nav className="fixed top-0 left-0 w-full bg-blue-300 bg-opacity-80 backdrop-blur-md shadow-lg py-4 z-50">
+
+    
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-white tracking-widest">
