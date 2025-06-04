@@ -17,7 +17,7 @@ export default function Services() {
             {/* Service 1 */}
             <div className="bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
               <h2 className="text-2xl font-semibold text-blue-700 font-orbitron">Real Estate Photography</h2>
-              <p className="text-gray-200 mt-2 font-orbitron">
+              <p className="text-blue-400 mt-2 font-orbitron">
                 High-quality aerial photos and videos to showcase properties with stunning visuals.
               </p>
             </div>
@@ -25,7 +25,7 @@ export default function Services() {
             {/* Service 2 */}
             <div className="bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
               <h2 className="text-2xl font-semibold text-blue-700 font-orbitron">Commercial Projects</h2>
-              <p className="text-gray-200 mt-2 font-orbitron">
+              <p className="text-blue-400 mt-2 font-orbitron">
                 Perfect for business promotions, construction monitoring, and advertising campaigns.
               </p>
             </div>
@@ -33,10 +33,18 @@ export default function Services() {
             {/* Service 3 */}
             <div className="bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
               <h2 className="text-2xl font-semibold text-blue-700 font-orbitron">Custom Aerial Footage</h2>
-              <p className="text-gray-200 mt-2 font-orbitron">
+              <p className="text-blue-400 mt-2 font-orbitron">
                 Need something unique? We provide fully customized drone videography solutions.
               </p>
             </div>
+            {/* Service 4 */}
+<div className="bg-white bg-opacity-30 backdrop-blur-lg p-6 rounded-lg shadow-lg hover:shadow-2xl transition">
+  <h2 className="text-2xl font-semibold text-blue-700 font-orbitron">2D Mapping & 3D Modeling</h2>
+  <p className="text-blue-400 mt-2 font-orbitron">
+    We provide precision orthomosaic 2D maps and interactive 3D models for real estate, construction, land development, and inspections.
+  </p>
+</div>
+
           </div>
         </div>
       </main>
