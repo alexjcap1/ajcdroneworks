@@ -4,6 +4,35 @@ import { useState } from 'react';
 
 export default function Contact() {
   const [otherInterest, setOtherInterest] = useState('');
+  const [formStatus, setFormStatus] = useState(null); // success | error | null
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus(null);
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    // Formspree endpoint
+    const res = await fetch('https://formspree.io/f/mdkzknez', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+      },
+      body: data,
+    });
+
+    if (res.ok) {
+      setFormStatus('success');
+      form.reset();
+    } else {
+      setFormStatus('error');
+    }
+
+    setIsSubmitting(false);
+  }
 
   return (
     <main
@@ -31,10 +60,13 @@ export default function Contact() {
 
           {/* Contact Form */}
           <form
-            action="https://formspree.io/f/your-form-id" // Replace with your Formspree endpoint
-            method="POST"
+            onSubmit={handleSubmit}
             className="w-full md:w-2/3 bg-sky-50 p-6 rounded-lg shadow-inner space-y-6 text-left"
           >
+            {/* Hidden spam trap */}
+            <input type="text" name="_gotcha" style={{ display: 'none' }} />
+            <input type="hidden" name="_subject" value="New contact from AJC DroneWorks!" />
+
             <div>
               <label className="block font-orbitron mb-2">Name</label>
               <input
@@ -95,10 +127,19 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition font-orbitron"
+              disabled={isSubmitting}
+              className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition font-orbitron disabled:opacity-50"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
+
+            {/* Status messages */}
+            {formStatus === 'success' && (
+              <p className="text-green-700 mt-4 font-orbitron">✅ Message sent successfully!</p>
+            )}
+            {formStatus === 'error' && (
+              <p className="text-red-700 mt-4 font-orbitron">❌ Oops! Something went wrong. Please try again.</p>
+            )}
           </form>
         </div>
       </div>
