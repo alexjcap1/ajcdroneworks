@@ -1,12 +1,7 @@
 export async function GET() {
   const baseUrl = "https://ajcdroneworks.com";
 
-  const staticPaths = [
-    "",             // Home
-    "portfolio",
-    "contact",
-    "services",
-  ];
+  const staticPaths = ["", "portfolio", "contact", "services"];
 
   const urls = staticPaths
     .map((path) => {
@@ -24,7 +19,8 @@ export async function GET() {
       ${urls}
     </urlset>`;
 
-  return new Response(sitemap, {
+  return new Response(sitemap.trim(), {
+    status: 200,
     headers: {
       "Content-Type": "application/xml",
     },
