@@ -63,13 +63,14 @@ export default function Portfolio() {
             </p>
           </div>
 
-          {/* 3D Model Placeholder */}
-          <div className="w-full sm:w-[400px] aspect-[9/16] bg-gray-800 rounded-lg shadow-lg flex items-center justify-center">
-            <p className="text-gray-400 font-orbitron italic text-base sm:text-lg text-center px-4">
-              [ 3D Model Viewer Placeholder — Coming Soon ]
-            </p>
-          </div>
-        </div>
+          {/* 3D Model Output */}
+<div className="w-full sm:w-[400px] aspect-[9/16] bg-black rounded-lg shadow-lg flex items-center justify-center">
+  <video controls className="w-full h-auto rounded-lg">
+    <source src="/3D%20Model%20output.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
         {/* More Content Section */}
         <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 mt-20 mb-8 font-orbitron">
