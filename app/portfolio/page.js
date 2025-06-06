@@ -27,7 +27,10 @@ export default function Portfolio() {
               caption: "Drone Video with Voiceover Commentary",
             },
           ].map((video, idx) => (
-            <div key={idx} className="w-full sm:w-[400px] aspect-[9/16] rounded-lg overflow-hidden shadow-lg bg-black">
+            <div
+              key={idx}
+              className="w-full sm:w-[400px] aspect-[9/16] rounded-lg overflow-hidden shadow-lg bg-black"
+            >
               <iframe
                 src={video.src}
                 className="w-full h-full border-none"
@@ -63,15 +66,21 @@ export default function Portfolio() {
             </p>
           </div>
 
-          {/* 3D Model Output */}
-          <div className="w-full sm:w-[400px] aspect-[9/16] bg-black rounded-lg shadow-lg flex items-center justify-center">
-            <video controls className="w-full h-auto rounded-lg">
-              <source src="/3d-model-output.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          {/* 3D Model Video */}
+          <div className="w-full sm:w-[400px] aspect-[9/16] bg-black rounded-lg shadow-lg overflow-hidden">
+            <video
+              src="/3d-model-output.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain"
+            />
+            <p className="mt-3 text-sm sm:text-base text-gray-200 font-orbitron text-center px-2">
+              3D Model Orbit View
+            </p>
           </div>
-        </div> {/* <-- This div was missing, now added to close the flex-wrap */}
-
+        </div>
 
         {/* More Content Section */}
         <h2 className="text-3xl sm:text-4xl font-bold text-blue-400 mt-20 mb-8 font-orbitron">
