@@ -64,12 +64,13 @@ export default function Portfolio() {
           </div>
 
           {/* 3D Model Output */}
-<div className="w-full sm:w-[400px] aspect-[9/16] bg-black rounded-lg shadow-lg flex items-center justify-center">
-  <video controls className="w-full h-auto rounded-lg">
-    <source src="/3D%20Model%20output.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
+          <div className="w-full sm:w-[400px] aspect-[9/16] bg-black rounded-lg shadow-lg flex items-center justify-center">
+            <video controls className="w-full h-auto rounded-lg">
+              <source src="/3d-model-output.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> {/* <-- This div was missing, now added to close the flex-wrap */}
 
 
         {/* More Content Section */}
